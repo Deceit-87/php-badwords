@@ -5,9 +5,10 @@ $testo = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit accusan
 Numquam eligendi architecto porro obcaecati ullam! Quia tempora nostrum reiciendis. Veritatis architecto quae explicabo ipsum totam quam hic, laudantium quisquam facilis ipsam dolorem ab nostrum, quas mollitia similique dolores vitae.
 ';
 $lunghezza_testo = strlen($testo);
-$daCensurare = trim( strtolower ( isset($_GET['censura'] ) ) );
+// $daCensurare = trim( strtolower ( $_GET['censura']  ) );
 
-if(strlen($daCensurare) > 0){
+if (isset($_GET['censura'])){
+    $daCensurare = trim( strtolower ( $_GET['censura']  ) );
     $testoCensurato = str_replace($daCensurare,'***',strtolower($testo));
     $testo = "";
 }
